@@ -1,0 +1,27 @@
+
+extends layout
+
+block content
+
+    h1= title
+    p #{query.rows}
+    p #{query.cols}
+    - rows = Number(query.rows)
+    - cols = Number(query.cols)
+    if(Number.isInteger(rows) || Number.isInteger(cols))
+        p rows and cols are not integers
+    
+    else if(Number.isInteger(rows)<1 && Number.isInteger(rows)>5 )
+        p rows out of range
+    
+    else if(Number.isInteger(cols)<1 && Number.isInteger(cols)>5 )
+        p cols out of range
+    
+
+    table 
+     - for(let i=0; i<3; i++) {
+         tr
+         - for(let j=0; j<4; j++) {
+             td=i+j
+         - }
+     - }
