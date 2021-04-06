@@ -6,7 +6,7 @@ var logger = require('morgan');
 var electronic = require("./models/electronic");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var electronicsRouter = require('./routes/electronic');
+var electronicRouter = require('./routes/electronic');
 var starsRouter = require('./routes/stars');
 var slotRouter = require('./routes/slot');
 
@@ -61,7 +61,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/index', indexRouter);
 app.use('/users', usersRouter);
-app.use('/electronics', electronicsRouter);
+app.use('/electronic', electronicRouter);
 app.use('/stars', starsRouter);
 app.use('/slot', slotRouter);
 
