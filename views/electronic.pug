@@ -5,11 +5,15 @@ block content
   h1= title
 
   
-  -var result = [{category:"mobile",item:"iphone",price:500},{category:"laptop",item:"macbook",price:700},{category:"mobile",item:"samsung",price:200}]
+  -var result = [{category:"mobile",item:"iphone",price:500},{category:"laptop",item:"macbook",price:700},{category:"watch",item:"iwatch",price:300}]
 
   div(class="container-fluid")
-  div(class="row")
-     var i = 0
-    each value in result
-     div(class="col-sm-2" style="background-color:lavender") #{value}  
-       
+    div(class="row")
+      - var i=0 
+      each value in result
+        div(class="col-sm-2" onclick= `buy(${i})` style="background-color:lavender") category: #{value.category} - item: #{value.item} - price: #{value.price}
+        -i=i+1
+  script. 
+    function buy(a){
+    alert(`purchased item ${a+1}`)        
+   }
