@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
+const electronic_controlers = require("../controllers/electronic");
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('electronic', { title: 'Search Results electronic' });
-});
+/* GET electronic */
+router.get('/', electronic_controlers.mobile_view_all_Page);
 
 module.exports = router;
