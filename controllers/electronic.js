@@ -66,14 +66,3 @@ exports.electronic_update_put = async function (req, res) {
     res.send(`{"error": ${err}}`);
   }
 };
-exports.electronic_view_all_Page = async function (req, res) {
-  try {
-    theelectronic = await electronic.find();
-    res.render("electronic", {
-      title: "electronic Search Results",
-      results: theelectronic,
-    });
-  } catch (err) {
-    res.error(500, `{"error": ${err}}`);
-  }
-};
