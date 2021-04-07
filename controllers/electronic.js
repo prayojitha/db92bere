@@ -66,10 +66,12 @@ exports.electronic_update_put = async function (req, res) {
     res.send(`{"error": ${err}}`);
   }
 };
-exports.electronic_list = async function (req, res) {
+exports.electronic_view_all_Page = async function (req, res) {
     try {
       theelectronic = await electronic.find();
-      res.send(theelectronic);
+      res.render('electronni', 
+      { title: 'electronic Search Results', 
+      results: theelectronic });
     
     } catch (err) {
       res.error(500, `{"error": ${err}}`);
