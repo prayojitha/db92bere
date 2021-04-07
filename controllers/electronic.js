@@ -25,7 +25,7 @@ exports.electronic_detail = function (req, res) {
 };
 // Handle electronic create on POST.
 exports.electronic_create_post = async function (req, res) {
-  console.log(req.body);
+  console.log("body",req.body);
   let document = new electronic();
   // We are looking for a body, since POST does not have query parameters.
   // Even though bodies can be in many different formats, we will be picky
