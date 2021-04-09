@@ -54,18 +54,28 @@ exports.electronic_delete = async function (req, res) {
 };
 // Handle electronic update form on PUT.
 exports.electronic_update_put = async function (req, res) {
-  try {
-    await electronic.updateMany(
-      { name: "mobile" },
-      { $set: { item: req.params.model } }
-    );
-    res.send("electronic update PUT" + req.params.id);
-  } catch (err) {
-    res.status(500);
-
-    res.send(`{"error": ${err}}`);
+  console.log(`update on id ${req.params.id} with body ${JSON.stringify(req.body)}`)
+  try{
+    let toUpdate = await electronic.findById(req.params.id)
+    //Do updates of properties
+    if(req.body.category) toUpdate.category=req.body.category;
+    if(req.body.cost) toUpdate.item = req.body.item;
+    if(req.body.price) toUpdate.price = req.body.price;
+    if(req.body.checkboxsale) toUpdate.sale = true;
+      else toUpdate.same = false;
+    let result = await toUpdate.save();
+    console.log("Success" + result)
+    res.send(result)
+  }catch(err){
+    res.status(500)
+    res.send(`{"error":${err}: Update for id ${req.params.id} failed}`);
   }
 };
+  
+  
+
+
+
 exports.electronic_view_all_Page = async function (req, res) {
     try {
       theelectronic = await electronic.find();
