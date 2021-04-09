@@ -9,8 +9,7 @@ var usersRouter = require('./routes/users');
 var electronicRouter = require('./routes/electronic');
 var starsRouter = require('./routes/stars');
 var slotRouter = require('./routes/slot');
-var resRouter= require('./routes/resource')
-
+var resRouter= require('./routes/resource');
 var app = express();
 
 const connectionString = process.env.MONGO_CON
@@ -27,11 +26,11 @@ console.log("Connection to DB succeeded");});
 async function recreateDB(){
   // Delete everything
   await electronic.deleteMany();
-  let instance1 = new electronic({category:"mobile", item:'iphone',
+  let instance1 = new electronic({category:"mobile", item:"iphone",
   price:500});
-  let instance2 = new electronic({category:"laptop", item:'macbook',
+  let instance2 = new electronic({category:"laptop", item:"macbook",
   price:700});
-  let instance3 = new electronic({category:"watch", item:'iwatch',
+  let instance3 = new electronic({category:"watch", item:"iwatch",
   price:300});
  
   instance1.save( function(err,doc) {

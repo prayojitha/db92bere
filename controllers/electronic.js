@@ -12,17 +12,17 @@ exports.electronic_list = async function (req, res) {
   }
 };
 // for a specific electronic item.
-exports.electronic_detail = function (req, res) {
-    electronic.find({ category: req.params.name })
-    .then((result) => {
-      res.send(result);
-    })
-    .catch((err) => {
-      res.status(500);
-
-      res.send(`{"error": ${err}}`);
-    });
+exports.electronic_detail = async function (req, res) {
+  console.log("detail" + req.params.id)
+  try{
+    result = await electronic.findById(req.params.id)
+    res.send(result)
+  }catch(error){
+    res.status(500)
+    res.send(`{"error":document for id ${req.params.id} not found}`);
+  }
 };
+    
 // Handle electronic create on POST.
 exports.electronic_create_post = async function (req, res) {
   console.log("body",req.body);
