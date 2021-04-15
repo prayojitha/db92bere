@@ -117,3 +117,15 @@ exports.electronic_update_Page = async function (req, res) {
     res.send(`{'error': '${err}'}`);
   }
 };
+
+exports.electronic_delete_Page = async function (req, res) {
+  console.log("Delete view for id " + req.query.id);
+  try {
+    result = await electronic.findById(req.query.id);
+    res.render("electronicdelete", { title: "electronic Delete", toShow: result });
+  } catch (err) {
+    res.status(500);
+    res.send(`{'error': '${err}'}`);
+  }
+};
+
