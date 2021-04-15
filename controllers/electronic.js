@@ -97,3 +97,12 @@ exports.electronic_view_one_Page = async function(req, res) {
       res.send(`{'error': '${err}'}`);
   }
 };
+exports.electronic_create_Page = function (req, res) {
+  console.log("create view");
+  try {
+    res.render("electroniccreate", { title: "electronic Create" });
+  } catch (err) {
+    res.status(500);
+    res.send(`{'error': '${err}'}`);
+  }
+};
