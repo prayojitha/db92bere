@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  h1= title
+  h1(class="title")= title
   if(toShow==null)
     h2 No instance to display
   else
@@ -12,13 +12,13 @@ block content
     div
       div.row
         div(class='electronicAttr mr-3') electronic ID is:
-        div #{electronicid}
+        div(class='data') #{electronicid}
       div.row
         div(class='electronicAttr mr-3') electronic category is:
-        div #{category}
+        div(class='data') #{category}
       div.row
         div(class='electronicAttr mr-3') electronic item is:
-        div #{item}
+        div(class='data') #{item}
       div.row
         div(class='electronicAttr mr-3') electronic price is:
-        div #{price}
+        div(class='data') #{price}

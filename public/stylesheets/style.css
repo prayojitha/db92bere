@@ -10,4 +10,12 @@ a {
   background-color: aquamarine;
   width: 120px;
 }
+.data {
+  float: right;
+}
+h1 {
+  background-color: yellow;
+  color: rgb(255, 255, 255);
+}
+
 
