@@ -6,5 +6,6 @@ const electronic_controlers = require("../controllers/electronic");
 router.get("/", electronic_controlers.electronic_view_all_Page);
 router.get("/electronicdetail", electronic_controlers.electronic_view_one_Page);
 router.get("/electroniccreate", electronic_controlers.electronic_create_Page);
+router.get("/electronicupdate", electronic_controlers.electronic_update_Page);
 
 module.exports = router;

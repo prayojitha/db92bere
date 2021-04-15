@@ -106,3 +106,14 @@ exports.electronic_create_Page = function (req, res) {
     res.send(`{'error': '${err}'}`);
   }
 };
+
+exports.electronic_update_Page = async function (req, res) {
+  console.log("update view for item " + req.query.id);
+  try {
+    let result = await electronic.findById(req.query.id);
+    res.render("electronicupdate", { title: "electronic Update", toShow: result });
+  } catch (err) {
+    res.status(500);
+    res.send(`{'error': '${err}'}`);
+  }
+};
