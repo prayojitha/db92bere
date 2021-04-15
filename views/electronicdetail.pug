@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+
+  - let electronicid = toShow._id
+  - let electroniccategory = toShow.category
+  - let electronicitem = toShow.item
+  - let electronicprice = toShow.price
+  div
+    div.row
+      div(class='electronicAttr mr-3') electronic ID is:
+      div #{electronicid}
+    div.row
+      div(class='electronicAttr mr-3') electronic category is:
+      div #{electroniccategory}
+    div.row
+      div(class='electronicAttr mr-3') electronic item is:
+      div #{electronicitem}
+    div.row
+      div(class='electronicAttr mr-3') electronic price is:
+      div #{electronicprice}

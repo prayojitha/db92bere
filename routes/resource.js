@@ -10,9 +10,9 @@ router.get('/', api_controller.api);
 // POST request for creating a electronic.
 router.post('/electronic', electronic_controller.electronic_create_post);
 // DELETE request to delete electronic.
-router.delete('/electronic/:name', electronic_controller.electronic_delete);
+router.delete('/electronic/:id', electronic_controller.electronic_delete);
 // PUT request to update electronic.
-router.put('/electronic/:item', electronic_controller.electronic_update_put);
+router.put('/electronic/:id', electronic_controller.electronic_update_put);
 // GET request for one electronic item.
 router.get('/electronic/:id', electronic_controller.electronic_detail);
 // GET request for list of all electronic items.

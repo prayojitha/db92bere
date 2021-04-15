@@ -26,24 +26,24 @@ console.log("Connection to DB succeeded");});
 async function recreateDB(){
   // Delete everything
   await electronic.deleteMany();
-  let instance1 = new electronic({category:"mobile", item:"iphone",
-  price:500});
-  let instance2 = new electronic({category:"laptop", item:"macbook",
-  price:700});
-  let instance3 = new electronic({category:"watch", item:"iwatch",
-  price:300});
+  let instance1 = new electronic({category:'mobile', item:'iphone',
+  price:500,});
+  let instance2 = new electronic({category:'laptop', item:'macbook',
+  price:700,});
+  let instance3 = new electronic({category:'watch', item:'iwatch',
+  price:300,});
  
   instance1.save( function(err,doc) {
   if(err) return console.error(err);
-  console.log("First object saved")
+  console.log('First object saved')
   });
   instance2.save( function(err,doc) {
     if(err) return console.error(err);
-    console.log("second object saved")
+    console.log('second object saved')
     });
     instance3.save( function(err,doc) {
       if(err) return console.error(err);
-      console.log("third object saved")
+      console.log('third object saved')
       });
 }
 let reseed = true;
