@@ -4,19 +4,19 @@ block content
   h1= title
 
   - let electronicid = toShow._id
-  - let electroniccategory = toShow.category
-  - let electronicitem = toShow.item
-  - let electronicprice = toShow.price
+  - let category = toShow.category
+  - let item = toShow.item
+  - let price = toShow.price
   div
     div.row
       div(class='electronicAttr mr-3') electronic ID is:
       div #{electronicid}
     div.row
       div(class='electronicAttr mr-3') electronic category is:
-      div #{electroniccategory}
+      div #{category}
     div.row
       div(class='electronicAttr mr-3') electronic item is:
-      div #{electronicitem}
+      div #{item}
     div.row
       div(class='electronicAttr mr-3') electronic price is:
-      div #{electronicprice}
+      div #{price}
