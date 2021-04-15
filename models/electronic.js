@@ -1,7 +1,7 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 const electronicSchema = mongoose.Schema({
-mobilecompany: String,
-model: String,
-prize: Number
+category: String,
+item: String,
+price: Number,
 })
-module.exports = mongoose.model("Electronic", electronicSchema)
+module.exports = mongoose.model("electronic", electronicSchema);

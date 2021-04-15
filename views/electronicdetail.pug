@@ -2,21 +2,23 @@ extends layout
 
 block content
   h1= title
-
-  - let electronicid = toShow._id
-  - let category = toShow.category
-  - let item = toShow.item
-  - let price = toShow.price
-  div
-    div.row
-      div(class='electronicAttr mr-3') electronic ID is:
-      div #{electronicid}
-    div.row
-      div(class='electronicAttr mr-3') electronic category is:
-      div #{category}
-    div.row
-      div(class='electronicAttr mr-3') electronic item is:
-      div #{item}
-    div.row
-      div(class='electronicAttr mr-3') electronic price is:
-      div #{price}
+  if(toShow==null)
+    h2 No instance to display
+  else
+    - let electronicid = toShow._id
+    - let category = toShow.category
+    - let item = toShow.item
+    - let price = toShow.price
+    div
+      div.row
+        div(class='electronicAttr mr-3') electronic ID is:
+        div #{electronicid}
+      div.row
+        div(class='electronicAttr mr-3') electronic category is:
+        div #{category}
+      div.row
+        div(class='electronicAttr mr-3') electronic item is:
+        div #{item}
+      div.row
+        div(class='electronicAttr mr-3') electronic price is:
+        div #{price}

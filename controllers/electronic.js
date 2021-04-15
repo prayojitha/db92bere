@@ -5,7 +5,7 @@ exports.electronic_list = async function (req, res) {
   try {
     var data = await electronic.find({});
 
-    res.send("The data is \n" + data);
+    res.send("The data is \n" +data);
   } catch (err) {
     res.status(500);
 
@@ -48,10 +48,9 @@ exports.electronic_delete = async function (req, res) {
   try {
     result=await electronic.findByIdAndDelete(req.params.id)
     console.log("Removed" + result);
-    res.send(result) ; 
+    res.send(result); 
   } catch (err) {
     res.status(500);
-
     res.send(`{"error": Error deleting ${err}}`);
   }
 };
@@ -75,9 +74,10 @@ exports.electronic_update_put = async function (req, res) {
 exports.electronic_view_all_Page = async function (req, res) {
     try {
       theelectronic = await electronic.find();
-      res.render('electronic', 
-      { title: 'electronic Search Results', 
-      results: theelectronic });
+      res.render("electronic", 
+      { title: "electronic Search Results", 
+      results: theelectronic,
+     });
     
     } catch (err) {
       res.error(500, `{"error": ${err}}`);
