@@ -8,12 +8,18 @@ block content
   -var result = results
 
   div(class="container-fluid")
-    div(class="row")
+    div(class="row m-1")
       - var i=0 
       each value in result
-        div(class="col-sm-2" onclick= `buy(${i})` style="background-color:lavender") category: #{value.category} - item: #{value.item} - price: #{value.price}
+        -let destination = `dispatch(\"/electronic/electronicupdate?id=${value._id}\")`
+        div(class="col-sm-2" /*onclick= `buy(${i})`*/ style="background-color:lavender") category: #{value.category} - item: #{value.item} - price: #{value.price}
+          button.btn(class="btn-primary m1-1", onclick=destination) Update 
         -i=i+1
-  script. 
-    function buy(a){
-    alert(`purchased item ${a+1}`)        
-   }
+  script.
+    function dispatch(path){
+      window.location.href=path
+    }
+
+  //-   function buy(a){
+  //-   alert(`purchased item ${a+1}`)        
+  //-  }
