@@ -2,18 +2,25 @@
 extends layout
 
 block content
+
+
   h1= title
 
-  
+  - let destination1 = `dispatch(\"/electronic/electroniccreate\")`
+        button.btn(class="btn btn-success m1-1", onclick=destination1) Create  
   -var result = results
-
+      
   div(class="container-fluid")
+
     div(class="row m-1")
+      
       - var i=0 
       each value in result
         -let destination = `dispatch(\"/electronic/electronicupdate?id=${value._id}\")`
+        -let destination2 = `dispatch(\"/electronic/electronicupdate?id=${value._id}\")`
         div(class="col-sm-2" /*onclick= `buy(${i})`*/ style="background-color:lavender") category: #{value.category} - item: #{value.item} - price: #{value.price}
           button.btn(class="btn-primary m1-1", onclick=destination) Update 
+          button.btn(class="btn btn-danger m1-1", onclick=destination2) Delete
         -i=i+1
   script.
     function dispatch(path){
